@@ -1,18 +1,16 @@
 import React from "react";
 
+const Weather = (props) => (
 
-class Weather extends React.Component {
-    render() {
-        return(
-            //This statement is saying to only display if city and country are set.
         <div>
-            {this.props.city && this.props.country &&  <p> Location:  {this.props.city}, {this.props.country}</p>}
-           {this.props.temperature && <p>Teperature: {this.props.temperature}</p>}
-           {this.props.humidity && <p>Humidity: {this.props.humidity}</p>}
-         {this.props.description && <p> Conditions: {this.props.description}</p>}
+            
+        {props.city && props.country &&  <p> Location:  {props.city}, {props.country}</p>}
+        {props.temperature && <p>Teperature: {props.temperature}</p>}
+        {props.humidity && <p>Humidity: {props.humidity}%</p>}
+        {props.description && <p> Conditions: {props.description}</p>}
+        {props.error && <p>{props.error}</p>}
         </div> 
-        );
-    }
-}
+    );
+
 
 export default Weather;
